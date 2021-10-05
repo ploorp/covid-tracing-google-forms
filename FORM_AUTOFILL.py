@@ -1,7 +1,7 @@
 import sys
 from typing import final
 import requests
-from os import system
+from os import error, system
 from time import sleep
 
 def main():
@@ -49,19 +49,23 @@ def autofill():
 
     # parsing complex input
     if not q1 == '':
-        q2 = usr_input[0]
-        q3 = int(usr_input[1])
-        q4 = int(usr_input[2])
-        if q2 == 0 or 1 or '':
-            clear()
-        elif q3 == range(1,9):
-            clear()
-        elif q4 == range(10):
-            clear()
-        else:
-            return usr_input
+        try:
+            q2 = usr_input[0]
+            q3 = int(usr_input[1])
+            q4 = int(usr_input[2])
+            if q2 == 0 or 1 or '':
+                clear()
+            elif q3 == range(1,9):
+                clear()
+            elif q4 == range(10):
+                clear()
+            else:
+                restart(error)
+                return usr_input
+        except:
             restart(error)
-    
+            return usr_input
+
     if q2 == 'a' or 'b':
         clear()
     elif not q2 == 'a' or 'b':
@@ -148,7 +152,8 @@ def autofill():
                 print('--- Error: Submission failed. ---')
 
 def clear():
-    system('clear')
+    print('----')
+    #system('clear')
 
 def restart(error):
     clear()
