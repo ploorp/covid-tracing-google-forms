@@ -18,16 +18,14 @@ def autofill():
         clear()
         if not q1 == '':
             usr_input = q1.split(',')
-        #    if not usr_input[2] == 0 or 1:
-        #        usr_input[2] = ''
             break
         else:
             print('Is today an A or B day? (a/b)')
             q2 = input(':')
             clear()
             if not q2 == 'a' and q2 == 'b':
-                restart(q2)
                 return q2
+                restart(error)
             else:
                 print('How many submissions do you want to make? (1-8)')
                 q3 = input(':')
@@ -42,8 +40,9 @@ def autofill():
                     form_count = 8
                     break
                 else:
-                    restart(q3)
                     return q3
+                    restart(error)
+                    
 
     form_url = 'https://docs.google.com/forms/d/1FAIpQLSfAa0T4ToAh5L0g7v60nG_K0bs8xxFV5iMnsmLXBn3skJLZeA/viewform'
     submit_url = form_url.replace('/viewform', '/formResponse')
@@ -60,9 +59,22 @@ def autofill():
         elif q4 == range(10):
             clear()
         else:
-            restart(usr_input)
             return usr_input
-
+            restart(error)
+    
+    if q2 == 'a' or 'b':
+        clear()
+    elif not q2 == 'a' or 'b':
+        clear()
+    elif not q3 == 'a' or 'b':
+        clear()
+    elif not q4 == 'a' or 'b':
+        clear()
+    else:
+        message = 'user input'
+        return message
+        restart(message)
+   
     # user info
     first_name = 'Finn'
     last_name = 'Witherup'
@@ -126,7 +138,7 @@ def autofill():
             form_values.append(values3)
             print('\nSubmitting form...\n')
             try:
-            #    r = requests.post(submit_url, data=form_values, headers=user_agent)
+                #r = requests.post(submit_url, data=form_values, headers=user_agent)
                 sleep(5)
                 print(str(x + 1) + ' forms Submitted.\n')
                 form_values = []
@@ -136,7 +148,7 @@ def autofill():
                 print('--- Error: Submission failed. ---')
 
 def clear():
-  print('-------')
+    system('clear')
 
 def restart(error):
     clear()
