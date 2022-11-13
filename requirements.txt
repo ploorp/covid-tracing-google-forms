@@ -1,4 +1,4 @@
-requests
+requests  #  or github.com/httplib2 (google uses it for some reason)
 
 # alternatively you could use selenium.dev to automate the web browser
 #selenium
