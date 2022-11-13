@@ -1,10 +1,7 @@
-requests  #  or github.com/httplib2 (google uses it for some reason)
+requests
 
-# alternatively you could use selenium.dev to automate the web browser
 #selenium
 
-# another option is using google cloud, especially useful if your form requires a login
-# developers.google.com/forms/api
 #flask
 #google-api-python-client
 #google-auth
