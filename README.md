@@ -1,13 +1,6 @@
 # Google Forms submission script (unfinished)
 
-I made this little script while I was learning python. At my high school we had a google form that for some reason was supposed to be filled out every period (8 or 9 times per day), as it turns out you can submit google forms using only URL params and a POST request, so i decided to try doing it. The design reasoning is focused on being user friendliness and simplicity.
-
-### Other solutions
-- Google Cloud
-- Google Cloud API + Python
-- Browser automation (Selenium)
-
-If you are curious [here](https://news.ycombinator.com/item?id=2883863) is a comparison of [requests](https://github.com/psf/requests) and [httplib2](https://github.com/httplib2/httplib2)
+Designed to fill out contact tracing google form that was supposed to be filled out every period (8 or 9 times per day)
 
 ---
 
